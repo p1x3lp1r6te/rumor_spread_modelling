@@ -28,35 +28,21 @@ The project implements an extended DK/MT rumor-spreading framework with three co
 
 The governing equations are:
 
-\[
-\frac{dI}{dt} = -\beta \frac{IS}{N}
-\]
+```text
+dI/dt = -β(IS/N)
 
-\[
-\frac{dS}{dt}
-=
-\beta \frac{IS}{N}
--
-\alpha \frac{S(S+R)}{N}
-+
-\kappa \lambda(t)
-\]
+dS/dt = β(IS/N) - α[S(S+R)/N] + κλ(t)
 
-\[
-\frac{dR}{dt}
-=
-\alpha \frac{S(S+R)}{N}
-\]
+dR/dt = α[S(S+R)/N]
+```
 
 where:
 
-- \(\beta\) = rumor transmission rate
-- \(\alpha\) = stifling rate
-- \(\kappa\) = external forcing strength
-- \(\lambda(t)\) = real-world forcing signal from datasets
-
----
-
+- β = rumor transmission rate
+- α = stifling rate
+- κ = external forcing strength
+- λ(t) = real-world forcing signal from datasets
+  
 # Numerical Integration
 
 The nonlinear ODE system is solved using a custom implementation of the classical fourth-order Runge–Kutta (RK4) method.
